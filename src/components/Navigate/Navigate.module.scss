@@ -1,0 +1,65 @@
+@import "~/helper/mixin";
+
+.wrapper {
+    position: fixed;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.nav-list {
+    list-style: none;
+
+    .nav-item + .nav-item {
+        margin-top: 20px;
+    }
+
+    .nav-link {
+        position: relative;
+        text-decoration: none;
+        color: var(--text-color);
+        transition: all ease 0.3s;
+        .label {
+            position: absolute;
+            @include d-flex();
+            font-weight: 500;
+            top: 0;
+            right: 0;
+            height: 100%;
+            padding: 0 30px;
+            border-radius: 30px;
+            text-transform: uppercase;
+            transition: all ease 0.3s;
+            @include hidden();
+            z-index: -1;
+        }
+
+        .icon {
+            @include flex-center();
+            @include circle(50px);
+            background-color: var(--silver-color);
+            font-size: 2rem;
+            transition: all ease 0.3s;
+        }
+
+        &.active {
+            .icon {
+                background-color: var(--primary-color);
+                color: var(--white-color);
+            }
+        }
+
+        &:hover {
+            .icon,
+            .label {
+                background-color: var(--primary-color);
+                color: var(--white-color);
+            }
+            .label {
+                right: 25px;
+                @include appear();
+                border-radius: 30px 0 0 30px;
+            }
+        }
+    }
+}

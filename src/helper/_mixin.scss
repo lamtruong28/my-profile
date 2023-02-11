@@ -1,0 +1,27 @@
+@mixin flex-center() {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin d-flex($justify: center, $align-item: center) {
+    display: flex;
+    justify-content: $justify;
+    align-items: $align-item;
+}
+
+@mixin circle($size) {
+    width: $size;
+    height: $size;
+    border-radius: 50%;
+}
+
+@mixin hidden() {
+    opacity: 0;
+    visibility: hidden;
+}
+
+@mixin appear() {
+    opacity: 1;
+    visibility: visible;
+}
