@@ -17,3 +17,21 @@ export interface IMenuItem {
     icon: IconDefinition;
     link: string;
 }
+
+export interface IProcess {
+    timeline: string;
+    area: string;
+    work: string;
+    desc: string;
+}
+
+export interface IProject {
+    id: string;
+    name: string;
+    desc: string;
+    link: string;
+    technology: string;
+    type: string;
+    images: string[];
+    responsive: string;
+}

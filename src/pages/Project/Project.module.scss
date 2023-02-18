@@ -1,0 +1,182 @@
+@import "~/sass";
+
+.wrapper {
+    margin-bottom: 40px;
+
+    .project__list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 30px;
+    }
+}
+
+// Filter CSS
+.filter {
+    list-style: none;
+    display: flex;
+    margin-bottom: 30px;
+    &-item {
+        input:checked + label {
+            box-shadow: 0 0 4px var(--primary-color);
+            background-color: var(--primary-color);
+            color: var(--white-color);
+            cursor: default;
+        }
+
+        label {
+            display: block;
+            padding: 6px 8px;
+            background-color: var(--silver-color);
+            border-radius: 5px;
+            font-size: 1.5rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            cursor: pointer;
+            user-select: none;
+            transition: all ease 0.3s;
+
+            &:hover {
+                box-shadow: 0 0 4px var(--primary-color);
+                background-color: var(--primary-color);
+                color: var(--white-color);
+            }
+        }
+        + .filter-item {
+            margin-left: 12px;
+        }
+    }
+}
+
+// Card CSS
+.card {
+    width: calc(33.33333% - 20px);
+    position: relative;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 0 5px rgba($color: #000000, $alpha: 0.4);
+    overflow: hidden;
+    &::before {
+        position: absolute;
+        content: "";
+        width: 100%;
+        height: 100%;
+        background-color: rgba($color: #000000, $alpha: 0.6);
+        @include hidden();
+        transition: all linear 0.3s;
+    }
+    &:hover {
+        &::before,
+        .card__name {
+            @include appear();
+        }
+
+        .card__name {
+            transform: translate(-50%, -50%);
+        }
+    }
+
+    &__image {
+        width: 100%;
+        padding-top: 62.5%;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+    &__name {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -20%);
+        font-size: 3rem;
+        text-transform: uppercase;
+        white-space: nowrap;
+        color: var(--white-color);
+        @include hidden();
+        transition: all linear 0.3s;
+    }
+}
+
+// Detail CSS
+.detail {
+    position: relative;
+    display: flex;
+    background-color: var(--silver-color);
+    padding: 30px;
+    gap: 30px;
+    border-radius: 10px;
+    max-width: calc(100vw - 30px);
+    width: 1200px;
+
+    .close-btn {
+        display: block;
+        position: absolute;
+        top: 5px;
+        right: 10px;
+        @include circle(40px);
+        @include d-flex();
+        font-size: 2.2rem;
+        cursor: pointer;
+        transition: all ease 0.3s;
+        &:hover {
+            color: var(--primary-color);
+            background-color: var(--border-color);
+        }
+    }
+
+    .heading {
+        font-size: 3rem;
+        text-transform: uppercase;
+        border-bottom: 3px solid var(--border-color);
+        margin-bottom: 15px;
+
+        span {
+            position: relative;
+            display: inline-block;
+            padding-bottom: 5px;
+
+            &::after {
+                position: absolute;
+                content: "";
+                bottom: -3px;
+                left: 0;
+                height: 3px;
+                width: 100%;
+                background-color: var(--primary-color);
+            }
+        }
+    }
+
+    .left {
+        width: 50%;
+        .slider {
+            width: 100%;
+            height: 300px;
+            box-shadow: 0 0 5px rgba($color: #000000, $alpha: 0.3);
+            border-radius: 10px;
+            --swiper-navigation-color: var(--primary-color);
+        }
+
+        .img {
+            height: 100%;
+            background-position: center;
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+    }
+
+    .right {
+        width: 50%;
+
+        .detail-content-wrap {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+
+            p {
+                line-height: 1.8;
+            }
+        }
+    }
+}

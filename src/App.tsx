@@ -1,6 +1,9 @@
-import { Suspense } from "react";
+import React, { Suspense } from "react";
 import { Routes, Route } from "react-router-dom";
+import Loading from "./components/Loading";
+import Modal from "./components/Modal";
 import MainLayout from "./layouts/MainLayout";
+const NotFound = React.lazy(() => import("~/pages/NotFound"));
 import routes from "./routes";
 
 function App() {
@@ -15,7 +18,7 @@ function App() {
                         path={route.path}
                         element={
                             <Layout>
-                                <Suspense fallback={<p>Loading ...</p>}>
+                                <Suspense fallback={<Loading />}>
                                     <Page />
                                 </Suspense>
                             </Layout>
@@ -23,6 +26,7 @@ function App() {
                     />
                 );
             })}
+            <Route path="/*" element={<NotFound />} />
         </Routes>
     );
 }

@@ -1,0 +1,52 @@
+@import "~/sass";
+
+.wrapper {
+    .heading {
+        font-family: var(--second-font);
+        font-size: 2.6rem;
+        text-transform: uppercase;
+        text-align: center;
+        margin-bottom: 45px;
+    }
+
+    .skill {
+        &-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 40px 12px;
+        }
+
+        &-item {
+            width: calc(25% - 9px);
+            text-align: center;
+
+            .label {
+                display: block;
+                text-transform: uppercase;
+                font-weight: 500;
+                margin-top: 15px;
+            }
+        }
+    }
+
+    .image-wrap {
+        @include d-flex();
+        @include circle(120px);
+        margin: 0 auto;
+        background-color: var(--black-color);
+        transition: transform ease 0.3s;
+
+        &:hover {
+            box-shadow: 0 0 5px var(--black-color);
+            --webkit-transform: scale(1.05);
+            transform: scale(1.05);
+        }
+        .image {
+            width: 60%;
+            height: 60%;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+    }
+}

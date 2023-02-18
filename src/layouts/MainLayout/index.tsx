@@ -8,7 +8,7 @@ const cx = classNames.bind(styles);
 const MainLayout = ({ children }: IChildren) => {
     return (
         <div className={cx("wrapper")}>
-            <div>{children}</div>
+            {children}
             <Navigate />
             <ToggleTheme />
         </div>

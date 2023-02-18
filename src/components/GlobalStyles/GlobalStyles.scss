@@ -1,6 +1,7 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@700;900&family=Roboto:ital,wght@0,400;0,500;0,700;1,400&display=swap");
 :root {
     --font-family: "Roboto", sans-serif;
+    --second-font: "Poppins", sans-serif;
 
     --primary-color: #72b626;
     --white-color: #fff;
@@ -9,8 +10,10 @@
     --black-color: #222;
     --bg-color: #f6f6f7;
     --body-color: #fff;
-
-    --max-width: 1440px;
+    --border-color: rgba(0, 0, 0, 0.1);
+    --mark-title-color: rgba(30, 37, 48, 0.07);
+    --scrollbar-color: rgba(114, 182, 38, 0.7);
+    --max-width: 1200px;
 }
 
 [data-theme="dark"] {
@@ -19,6 +22,9 @@
     --body-color: #111111;
     --text-color: #fff;
     --silver-color: #363636;
+    --border-color: rgba(255, 255, 255, 0.1);
+    --mark-title-color: rgb(255 255 255 / 0.07);
+    --scrollbar-color: rgba(255, 180, 0, 0.7);
 }
 
 * {
@@ -37,16 +43,55 @@ body {
     color: var(--text-color);
     background-color: var(--body-color);
     overflow: overlay;
-    transition: background-color ease 0.3s;
+    transition: all ease 0.3s;
 }
 
 // custom scrollbar:
 html *::-webkit-scrollbar {
-    width: 8px;
-    height: 8px;
+    width: 6px;
+    height: 6px;
 }
 
 html *::-webkit-scrollbar-thumb {
     border-radius: 43px;
-    background-color: var(--primary-color);
+    background-color: var(--scrollbar-color);
+}
+
+a[href] {
+    text-decoration: none;
+    color: inherit;
+    transition: all ease 0.3s;
+    &:hover {
+        color: var(--primary-color);
+    }
+}
+
+.slide {
+    -webkit-animation: slide 0.5s cubic-bezier(1, -0.01, 0.64, 1.02) forwards;
+    animation: slide 0.5s cubic-bezier(1, -0.01, 0.64, 1.02) forwards;
+    background-color: var(--silver-color);
+    height: 100vh;
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 997;
+}
+
+@keyframes slide {
+    0% {
+        opacity: 1;
+        top: 0;
+    }
+
+    99% {
+        opacity: 1;
+        top: 99%;
+    }
+
+    to {
+        display: none;
+        opacity: 0;
+        top: 100%;
+    }
 }

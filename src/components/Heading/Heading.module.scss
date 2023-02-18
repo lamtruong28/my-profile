@@ -1,0 +1,33 @@
+.wrapper {
+    position: relative;
+    padding: 70px 0;
+
+    .heading {
+        font-family: var(--second-font);
+        font-size: 5.6rem;
+        font-weight: 900;
+        text-transform: uppercase;
+        text-align: center;
+
+        span {
+            color: var(--primary-color);
+            transition: color ease 0.3s;
+        }
+    }
+
+    .watermark {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        --webkit-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        font-family: var(--second-font);
+        font-size: 11rem;
+        font-weight: 700;
+        color: var(--mark-title-color);
+        letter-spacing: 10px;
+        text-transform: uppercase;
+        transition: color ease 0.3s;
+        z-index: -1;
+    }
+}

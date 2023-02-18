@@ -9,6 +9,7 @@ type ButtonPropsType = {
     children: ReactNode;
     to?: string;
     href?: string;
+    download?: boolean;
     primary?: boolean;
     outline?: boolean;
     rounded?: boolean;
@@ -26,6 +27,7 @@ function Button({
     children,
     to,
     href,
+    download,
     primary,
     outline,
     rounded,
@@ -50,6 +52,7 @@ function Button({
         Comp = Link;
     } else if (href) {
         props.href = href;
+        props.download = download;
         Comp = "a";
     }
 

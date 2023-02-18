@@ -1,8 +1,7 @@
-@import "~/helper/mixin";
+@import "~/sass";
 .wrapper {
-    height: 100vh;
-    padding: 0 30px;
     display: flex;
+    height: 100vh;
     .mask {
         position: fixed;
         top: -50%;
@@ -45,6 +44,7 @@
                 position: relative;
                 font-size: 4.4rem;
                 font-weight: 700;
+                font-family: var(--second-font);
                 padding-left: 70px;
                 color: var(--primary-color);
                 margin-bottom: 10px;

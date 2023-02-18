@@ -1,4 +1,4 @@
-@import "~/helper/mixin";
+@import "~/sass";
 .wrapper {
     position: fixed;
     top: 20px;
@@ -11,7 +11,7 @@
     cursor: pointer;
     user-select: none;
     transition: all ease 0.3s;
-
+    z-index: 998;
     .icon {
         @include d-flex();
         position: absolute;

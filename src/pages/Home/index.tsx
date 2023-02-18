@@ -1,7 +1,6 @@
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import classNames from "classnames/bind";
-import images from "~/assets/images";
 import Button from "~/components/Button";
 import configs from "~/configs";
 import styles from "./Home.module.scss";
@@ -9,6 +8,7 @@ const cx = classNames.bind(styles);
 const Home = () => {
     return (
         <div className={cx("wrapper")}>
+            <div className={"slide"}></div>
             <div className={cx("mask")}></div>
             <div className={cx("avatar")}>
                 <div className={cx("image")}></div>
@@ -16,7 +16,7 @@ const Home = () => {
             <div className={cx("content")}>
                 <div className={cx("text")}>
                     <h1 className={cx("title")}>
-                        I'm Trần Lâm Trường <span>Web Developer !</span>
+                        I'm Tran Lam Truong <span>Web Developer !</span>
                     </h1>
                     <p className={cx("greet")}>
                         Xin chào mọi người! Mình là Trường, là sinh viên vừa mới

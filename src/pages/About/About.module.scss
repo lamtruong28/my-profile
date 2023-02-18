@@ -1,0 +1,85 @@
+.wrapper {
+    margin-bottom: 40px;
+
+    .info {
+        display: flex;
+        gap: 0 24px;
+
+        &__basic {
+            width: 50%;
+
+            .title {
+                letter-spacing: 2px;
+            }
+
+            .wrap__basic {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 22px 12px;
+                margin: 22px 0;
+            }
+        }
+
+        &__detail {
+            width: calc(50% - 6px);
+            font-weight: 500;
+        }
+
+        &__more {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            width: 50%;
+
+            .card {
+                width: calc(50% - 15px);
+                height: fit-content;
+                border: 1px solid;
+                border-radius: 10px;
+                padding: 30px;
+
+                .quantity {
+                    position: relative;
+                    display: inline-block;
+                    font-family: var(--second-font);
+                    font-size: 5rem;
+                    line-height: 1;
+                    color: var(--primary-color);
+
+                    .icon {
+                        position: absolute;
+                        top: 4px;
+                        left: calc(100% + 2px);
+                        font-size: 2.4rem;
+                    }
+                }
+
+                .label {
+                    position: relative;
+                    padding-left: 45px;
+                    text-transform: uppercase;
+
+                    &::before {
+                        position: absolute;
+                        content: "";
+                        top: 50%;
+                        left: 0;
+                        transform: translateY(-50%);
+                        width: 30px;
+                        height: 1px;
+                        background-color: var(--text-color);
+                    }
+
+                    span {
+                        display: block;
+                    }
+                }
+            }
+        }
+    }
+
+    .separator {
+        margin: 45px auto;
+        width: 50%;
+    }
+}

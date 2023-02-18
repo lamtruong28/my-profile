@@ -1,0 +1,21 @@
+.input {
+    width: 100%;
+    padding: 15px 30px;
+    border-radius: 999px;
+    border: 1.5px solid var(--silver-color);
+    outline: none;
+    color: var(--text-color);
+    background-color: var(--silver-color);
+    caret-color: var(--primary-color);
+    font-size: 1.6rem;
+    transition: all ease 0.3s;
+
+    &:focus {
+        border-color: var(--primary-color);
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+    }
+
+    &::placeholder {
+        text-transform: uppercase;
+    }
+}
