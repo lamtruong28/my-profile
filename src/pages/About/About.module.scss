@@ -15,7 +15,7 @@
         gap: 0 24px;
 
         &__basic {
-            width: 50%;
+            width: calc(50% - 12px);
             @include responsive(MD) {
                 width: 100%;
                 margin-bottom: 24px;
@@ -42,7 +42,7 @@
             display: flex;
             flex-wrap: wrap;
             gap: 30px;
-            width: 50%;
+            width: calc(50% - 12px);
             @include responsive(MD) {
                 width: 100%;
             }
