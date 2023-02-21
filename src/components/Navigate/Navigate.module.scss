@@ -4,10 +4,11 @@
     position: fixed;
     right: 15px;
     top: 50%;
+    background-color: unset;
     transform: translateY(-50%);
     z-index: 998;
 
-    @include responsive(md) {
+    @include responsive(MD) {
         top: 100%;
         left: 0;
         right: 0;
@@ -29,6 +30,7 @@
         text-decoration: none;
         color: var(--text-color);
         transition: all ease 0.3s;
+
         .label {
             position: absolute;
             @include d-flex();
@@ -72,11 +74,14 @@
             }
         }
     }
-
-    @include responsive(md) {
+    @include responsive(MD) {
         @include d-flex(space-around);
         .nav-item + .nav-item {
             margin-top: 0;
+        }
+
+        .nav-link .label {
+            display: none;
         }
     }
 }

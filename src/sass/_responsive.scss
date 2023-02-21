@@ -1,25 +1,32 @@
+$XS: 36em; // 576px
+$SM: 48em; // 768px
+$MD: 62em; // 992px
+$XL: 75em; // 1400px
+$XXL: 87.5em; //> 1400px
+
 @mixin responsive($breakpoint) {
-    @if $breakpoint == sm {
-        //small
-        @media (max-width: 600px) {
+    @if $breakpoint == XS {
+        @media only screen and (max-width: $XS) {
             @content;
         }
     }
-    @if $breakpoint == md {
-        //medium
-        @media (max-width: 900px) {
+    @if $breakpoint == SM {
+        @media only screen and (max-width: $SM) {
             @content;
         }
     }
-    @if $breakpoint == xl {
-        // large
-        @media (max-width: 1200px) {
+    @if $breakpoint == MD {
+        @media only screen and (max-width: $MD) {
             @content;
         }
     }
-    @if $breakpoint == xxl {
-        // extra large
-        @media (min-width: 1400px) {
+    @if $breakpoint == XL {
+        @media only screen and (max-width: $XL) {
+            @content;
+        }
+    }
+    @if $breakpoint == XXL {
+        @media only screen and (max-width: $XXL) {
             @content;
         }
     }

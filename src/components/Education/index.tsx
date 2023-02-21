@@ -10,17 +10,18 @@ const processes: IProcess[] = [
         work: "Học sinh",
         desc: "Tốt nghiệp trung học phổ thông.",
     },
-    {
-        timeline: "2020 - 2023",
-        area: "Cao đăng Lý Tự Trọng",
-        work: "Sinh viên IT",
-        desc: "Bắt đầu quá trình học lại với chuyên ngành công nghệ thông tin",
-    },
+
     {
         timeline: "2017 - 2020",
         area: "Nidec Việt Nam Corporation",
         work: "Công nhân sản xuất",
         desc: "Sau khi vừa tốt nghiệp, tôi đã vào Sài Gòn làm việc để trải nghiệm cuộc sống thành thị.",
+    },
+    {
+        timeline: "2020 - 2023",
+        area: "Cao đăng Lý Tự Trọng",
+        work: "Sinh viên IT",
+        desc: "Bắt đầu quá trình học lại với chuyên ngành công nghệ thông tin",
     },
     {
         timeline: "11/2022 - 02/2023",

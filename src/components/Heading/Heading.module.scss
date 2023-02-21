@@ -1,3 +1,4 @@
+@import "~/sass";
 .wrapper {
     position: relative;
     padding: 70px 0;
@@ -8,6 +9,13 @@
         font-weight: 900;
         text-transform: uppercase;
         text-align: center;
+
+        @include responsive(MD) {
+            font-size: 5rem;
+        }
+        @include responsive(XS) {
+            font-size: 3.5rem;
+        }
 
         span {
             color: var(--primary-color);
@@ -29,5 +37,12 @@
         text-transform: uppercase;
         transition: color ease 0.3s;
         z-index: -1;
+
+        @include responsive(MD) {
+            font-size: 9rem;
+        }
+        @include responsive(XS) {
+            font-size: 6rem;
+        }
     }
 }

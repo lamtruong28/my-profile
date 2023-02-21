@@ -2,13 +2,25 @@
 
 .wrapper {
     margin-bottom: 40px;
-
+    @include responsive(MD) {
+        margin-bottom: 100px;
+        padding: 0 15px;
+    }
+    @include responsive(XS) {
+        padding: 0;
+    }
     .content {
         display: flex;
+        flex-wrap: wrap;
         gap: 0 30px;
 
         &__left {
-            width: 33.33333%;
+            width: calc(33.33333% - 15px);
+
+            @include responsive(MD) {
+                width: 100%;
+                margin-bottom: 30px;
+            }
 
             .title {
                 font-family: var(--second-font);
@@ -76,16 +88,29 @@
         }
 
         &__right {
-            width: 66.66667%;
+            width: calc(66.66667% - 15px);
             padding: 0 15px;
             display: flex;
             flex-direction: column;
-            // align-items: start;
             gap: 30px;
 
             .wrap__name-email {
                 display: flex;
+                flex-wrap: wrap;
                 gap: 30px;
+
+                input {
+                    width: calc(50% - 15px);
+                }
+            }
+
+            @include responsive(MD) {
+                width: 100%;
+                padding: 0;
+
+                .wrap__name-email input {
+                    width: 100%;
+                }
             }
 
             .message {
