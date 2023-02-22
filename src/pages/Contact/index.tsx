@@ -1,4 +1,6 @@
 import classNames from "classnames/bind";
+import { useFormik } from "formik";
+import * as Yup from "yup";
 import {
     faEnvelope,
     faLocationDot,
@@ -41,6 +43,29 @@ const contactInfo: IContactInfo[] = [
 
 const cx = classNames.bind(styles);
 const Contact = () => {
+    const formik = useFormik({
+        initialValues: {
+            name: "",
+            email: "",
+            subject: "",
+            message: "",
+        },
+        validationSchema: Yup.object({
+            name: Yup.string().trim().required("Name is required!"),
+            email: Yup.string()
+                .email("Invalid email!")
+                .trim()
+                .required("Email is required!"),
+            subject: Yup.string().trim().required("Subject is required!"),
+            message: Yup.string().trim().required("Message is required!"),
+        }),
+
+        onSubmit: (values) => {
+            console.log(values);
+            formik.resetForm();
+        },
+    });
+    const { name, email, subject, message } = formik.values;
     return (
         <div className={cx("wrapper")}>
             <div className={"slide"}></div>
@@ -93,27 +118,68 @@ const Contact = () => {
                         </a>
                     </div>
                 </div>
-                <form className={cx("content__right")}>
+                <form
+                    className={cx("content__right")}
+                    onSubmit={formik.handleSubmit}
+                >
                     <div className={cx("wrap__name-email")}>
-                        <Input
-                            placeholder="Your name"
-                            onChange={(e) => console.log(e.target.value)}
-                        />
-                        <Input
-                            placeholder="Your email"
-                            onChange={(e) => console.log(e.target.value)}
-                        />
+                        <div className={cx("name")}>
+                            <Input
+                                placeholder="Your name"
+                                name="name"
+                                value={name}
+                                onChange={formik.handleChange}
+                            />
+                            {formik.errors.name && formik.touched.name && (
+                                <span className={cx("message-err")}>
+                                    {formik.errors.name}
+                                </span>
+                            )}
+                        </div>
+                        <div className={cx("email")}>
+                            <Input
+                                placeholder="Your email"
+                                name="email"
+                                value={email}
+                                onChange={formik.handleChange}
+                            />
+                            {formik.errors.email && formik.touched.email && (
+                                <span className={cx("message-err")}>
+                                    {formik.errors.email}
+                                </span>
+                            )}
+                        </div>
                     </div>
-                    <Input
-                        placeholder="Subject"
-                        onChange={(e) => console.log(e.target.value)}
-                    />
-                    <textarea
-                        className={cx("message")}
-                        placeholder="Message"
-                        spellCheck={false}
-                    ></textarea>
+                    <div>
+                        <Input
+                            placeholder="Subject"
+                            name="subject"
+                            value={subject}
+                            onChange={formik.handleChange}
+                        />
+                        {formik.errors.subject && formik.touched.subject && (
+                            <span className={cx("message-err")}>
+                                {formik.errors.subject}
+                            </span>
+                        )}
+                    </div>
+                    <div className="">
+                        <textarea
+                            className={cx("message")}
+                            placeholder="Message"
+                            spellCheck={false}
+                            name="message"
+                            value={message}
+                            onChange={formik.handleChange}
+                        ></textarea>
+                        {formik.errors.message && formik.touched.message && (
+                            <span className={cx("message-err")}>
+                                {formik.errors.message}
+                            </span>
+                        )}
+                    </div>
                     <Button
+                        type="submit"
                         className={cx("send-btn")}
                         outline
                         rounded

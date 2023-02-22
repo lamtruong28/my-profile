@@ -99,7 +99,8 @@
                 flex-wrap: wrap;
                 gap: 30px;
 
-                input {
+                .name,
+                .email {
                     width: calc(50% - 15px);
                 }
             }
@@ -111,7 +112,8 @@
 
                 .wrap__name-email {
                     gap: 15px;
-                    input {
+                    .name,
+                    .email {
                         width: 100%;
                     }
                 }
@@ -144,6 +146,13 @@
             .send-btn {
                 text-transform: uppercase;
                 width: fit-content;
+            }
+
+            .message-err {
+                display: block;
+                color: var(--red-color);
+                margin-top: 4px;
+                padding-left: 30px;
             }
         }
     }

@@ -5,7 +5,8 @@ import styles from "./Button.module.scss";
 
 const cx = classNames.bind(styles);
 
-type ButtonPropsType = {
+interface ButtonPropsType
+    extends React.ButtonHTMLAttributes<HTMLButtonElement> {
     children: ReactNode;
     to?: string;
     href?: string;
@@ -21,7 +22,7 @@ type ButtonPropsType = {
     leftIcon?: ReactNode;
     rightIcon?: ReactNode;
     onClick?: () => void;
-};
+}
 
 function Button({
     children,
