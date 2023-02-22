@@ -31,6 +31,9 @@ const Project = () => {
                         <Card project={project} key={project.id} />
                     ))
                 )}
+                {!loading && projects.length === 0 && (
+                    <p>Chưa có project nào</p>
+                )}
             </div>
         </div>
     );

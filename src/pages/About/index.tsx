@@ -1,6 +1,7 @@
 import { faArrowRight, faPlus } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import classNames from "classnames/bind";
+import files from "~/assets/files";
 import images from "~/assets/images";
 import Button from "~/components/Button";
 import Education from "~/components/Education";
@@ -82,7 +83,7 @@ const About = () => {
                         outline
                         rounded
                         leftIcon={<FontAwesomeIcon icon={faArrowRight} />}
-                        href={images.avatar}
+                        href={files.myCV}
                         download
                     >
                         DOWNLOAD CV
