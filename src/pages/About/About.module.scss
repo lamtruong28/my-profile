@@ -36,6 +36,13 @@
         &__detail {
             width: calc(50% - 6px);
             font-weight: 500;
+
+            a {
+                display: block;
+                text-overflow: ellipsis;
+                overflow: hidden;
+                white-space: nowrap;
+            }
         }
 
         &__more {
@@ -43,9 +50,7 @@
             flex-wrap: wrap;
             gap: 30px;
             width: calc(50% - 12px);
-            @include responsive(MD) {
-                width: 100%;
-            }
+
             .card {
                 width: calc(50% - 15px);
                 height: fit-content;
@@ -93,6 +98,15 @@
                     span {
                         display: block;
                     }
+                }
+            }
+
+            @include responsive(MD) {
+                width: 100%;
+                gap: 12px;
+
+                .card {
+                    width: calc(50% - 6px);
                 }
             }
         }

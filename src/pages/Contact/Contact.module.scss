@@ -107,9 +107,13 @@
             @include responsive(MD) {
                 width: 100%;
                 padding: 0;
+                gap: 15px;
 
-                .wrap__name-email input {
-                    width: 100%;
+                .wrap__name-email {
+                    gap: 15px;
+                    input {
+                        width: 100%;
+                    }
                 }
             }
 
