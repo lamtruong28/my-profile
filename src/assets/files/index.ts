@@ -1,4 +1,4 @@
-import myCV from "~/assets/files/TranLamTruongFresherFrontend.pdf";
+import myCV from "~/assets/files/TranLamTruong_CV.pdf";
 const files = {
     myCV,
 };
