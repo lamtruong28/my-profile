@@ -34,11 +34,14 @@
         }
 
         &__detail {
+            display: flex;
+            align-items: center;
+            column-gap: 6px;
             width: calc(50% - 6px);
             font-weight: 500;
 
             a {
-                display: block;
+                display: inline-block;
                 text-overflow: ellipsis;
                 overflow: hidden;
                 white-space: nowrap;

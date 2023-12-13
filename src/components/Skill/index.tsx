@@ -38,6 +38,26 @@ const skills: ISkill[] = [
         label: "Redux",
     },
     {
+        image: images.nextJS,
+        label: "NextJS",
+    },
+    {
+        image: images.antd,
+        label: "Ant design",
+    },
+    {
+        image: images.mui,
+        label: "MUI",
+    },
+    {
+        image: images.mysql,
+        label: "MySQL",
+    },
+    {
+        image: images.postgres,
+        label: "Postgres",
+    },
+    {
         image: images.firebase,
         label: "Firebase",
     },
@@ -69,6 +89,7 @@ const Skill = () => {
                     <div className={cx("skill-item")} key={skill.label}>
                         <div className={cx("image-wrap")}>
                             <div
+                                title={skill.label}
                                 className={cx("image")}
                                 style={{
                                     backgroundImage: `url(${skill.image})`,

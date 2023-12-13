@@ -11,6 +11,12 @@ import php from "~/assets/images/php.png";
 import git from "~/assets/images/git.png";
 import ts from "~/assets/images/ts.png";
 import cSharp from "~/assets/images/CSharp.png";
+import nextJS from "~/assets/images/nextjs.png";
+import mui from "~/assets/images/mui.png";
+import antd from "~/assets/images/antd.png";
+import postgres from "~/assets/images/postgres.png";
+import mysql from "~/assets/images/mysql.png";
+
 const images = {
     avatar,
     html,
@@ -25,6 +31,11 @@ const images = {
     git,
     ts,
     cSharp,
+    nextJS,
+    antd,
+    mui,
+    postgres,
+    mysql,
 };
 
 export default images;

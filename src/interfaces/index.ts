@@ -21,7 +21,7 @@ export interface IMenuItem {
 export interface IProcess {
     timeline: string;
     area: string;
-    work: string;
+    position: string;
     desc: string;
 }
 

@@ -5,7 +5,7 @@ import { IProcess } from "~/interfaces";
 import styles from "./Education.module.scss";
 
 const cx = classNames.bind(styles);
-const Process = ({ timeline, area, work, desc }: IProcess) => {
+const Process = ({ timeline, area, position, desc }: IProcess) => {
     return (
         <div className={cx("process-item")}>
             <span className={cx("wrap-icon")}>
@@ -13,7 +13,7 @@ const Process = ({ timeline, area, work, desc }: IProcess) => {
             </span>
             <span className={cx("timeline")}>{timeline}</span>
             <h4 className={cx("work")}>
-                {area} - <span>{work}</span>
+                {area} - <span>{position}</span>
             </h4>
             <p className={cx("desc")}>{desc}</p>
         </div>
