@@ -1,7 +1,6 @@
 import React, { Suspense } from "react";
 import { Routes, Route } from "react-router-dom";
 import Loading from "./components/Loading";
-import Modal from "./components/Modal";
 import MainLayout from "./layouts/MainLayout";
 const NotFound = React.lazy(() => import("~/pages/NotFound"));
 import routes from "./routes";
