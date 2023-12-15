@@ -115,6 +115,15 @@
         }
     }
 
+    .wrap__button {
+        display: flex;
+        justify-content: center;
+
+        &-btn {
+            min-width: 200px;
+        }
+    }
+
     .separator {
         margin: 45px auto;
         width: 50%;

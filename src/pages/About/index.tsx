@@ -8,6 +8,8 @@ import Education from "~/components/Education";
 import Heading from "~/components/Heading";
 import Skill from "~/components/Skill";
 import styles from "./About.module.scss";
+import Modal from "~/components/Modal";
+import { useState } from "react";
 const cx = classNames.bind(styles);
 interface IPersonalInfo {
     firstName: string;
@@ -31,96 +33,130 @@ const personalInfo: IPersonalInfo = {
 };
 
 const About = () => {
+    const [showPreview, setShowPreview] = useState<boolean>(false);
     return (
-        <div className={cx("wrapper")}>
-            <div className={"slide"}></div>
-            <Heading label={"About"} highlight={"Me"} watermark={"Resume"} />
-            <div className={cx("info")}>
-                <div className={cx("info__basic")}>
-                    <h2 className={cx("title")}>PERSONAL INFOS</h2>
-                    <div className={cx("wrap__basic")}>
-                        <p className={cx("info__detail")}>
-                            First Name: {personalInfo.firstName}
-                        </p>
-                        <p className={cx("info__detail")}>
-                            Last Name: {personalInfo.lastName}
-                        </p>
-                        <p className={cx("info__detail")}>
-                            Year of Birth: {personalInfo.yearOfBirth}
-                        </p>
-                        <p className={cx("info__detail")}>
-                            Gender: {personalInfo.gender}
-                        </p>
-                        <p className={cx("info__detail")}>
-                            Address: {personalInfo.address}
-                        </p>
-                        <p className={cx("info__detail")}>
-                            Phone:{" "}
-                            <a
-                                className={cx("link")}
-                                href={`tel:+ ${personalInfo.phone}`}
+        <>
+            <div className={cx("wrapper")}>
+                <div className={"slide"}></div>
+                <Heading
+                    label={"About"}
+                    highlight={"Me"}
+                    watermark={"Resume"}
+                />
+                <div className={cx("info")}>
+                    <div className={cx("info__basic")}>
+                        <h2 className={cx("title")}>PERSONAL INFOS</h2>
+                        <div className={cx("wrap__basic")}>
+                            <p className={cx("info__detail")}>
+                                First Name: {personalInfo.firstName}
+                            </p>
+                            <p className={cx("info__detail")}>
+                                Last Name: {personalInfo.lastName}
+                            </p>
+                            <p className={cx("info__detail")}>
+                                Year of Birth: {personalInfo.yearOfBirth}
+                            </p>
+                            <p className={cx("info__detail")}>
+                                Gender: {personalInfo.gender}
+                            </p>
+                            <p className={cx("info__detail")}>
+                                Address: {personalInfo.address}
+                            </p>
+                            <p className={cx("info__detail")}>
+                                Phone:{" "}
+                                <a
+                                    className={cx("link")}
+                                    href={`tel:+ ${personalInfo.phone}`}
+                                >
+                                    {personalInfo.phone}
+                                </a>
+                            </p>
+                            <p className={cx("info__detail")}>
+                                Email:{" "}
+                                <a href={`mailto: ${personalInfo.email}`}>
+                                    {personalInfo.email}
+                                </a>
+                            </p>
+                            <p className={cx("info__detail")}>
+                                Github:{" "}
+                                <a
+                                    href={`http://${personalInfo.github}`}
+                                    target="_blank"
+                                >
+                                    {personalInfo.github}
+                                </a>
+                            </p>
+                        </div>
+                        <div className={cx("wrap__button")}>
+                            <Button
+                                className={cx("wrap__button-btn")}
+                                outline
+                                rounded
+                                leftIcon={
+                                    <FontAwesomeIcon icon={faArrowRight} />
+                                }
+                                onClick={() => setShowPreview(true)}
                             >
-                                {personalInfo.phone}
-                            </a>
-                        </p>
-                        <p className={cx("info__detail")}>
-                            Email:{" "}
-                            <a href={`mailto: ${personalInfo.email}`}>
-                                {personalInfo.email}
-                            </a>
-                        </p>
-                        <p className={cx("info__detail")}>
-                            Github:{" "}
-                            <a
-                                href={`http://${personalInfo.github}`}
-                                target="_blank"
+                                View CV
+                            </Button>
+                            <Button
+                                className={cx("wrap__button-btn")}
+                                outline
+                                rounded
+                                leftIcon={
+                                    <FontAwesomeIcon icon={faArrowRight} />
+                                }
+                                href={files.myCV}
+                                download
                             >
-                                {personalInfo.github}
-                            </a>
-                        </p>
+                                DOWNLOAD CV
+                            </Button>
+                        </div>
                     </div>
-                    <Button
-                        outline
-                        rounded
-                        leftIcon={<FontAwesomeIcon icon={faArrowRight} />}
-                        href={files.myCV}
-                        download
-                    >
-                        DOWNLOAD CV
-                    </Button>
-                </div>
-                <div className={cx("info__more")}>
-                    <div className={cx("card")}>
-                        <h3 className={cx("quantity")}>
-                            1
-                            <FontAwesomeIcon
-                                icon={faPlus}
-                                className={cx("icon")}
-                            />
-                        </h3>
-                        <p className={cx("label")}>
-                            Years of <span>experience</span>
-                        </p>
-                    </div>
-                    <div className={cx("card")}>
-                        <h3 className={cx("quantity")}>
-                            10
-                            <FontAwesomeIcon
-                                icon={faPlus}
-                                className={cx("icon")}
-                            />
-                        </h3>
-                        <p className={cx("label")}>
-                            Completed <span>projects</span>
-                        </p>
+                    <div className={cx("info__more")}>
+                        <div className={cx("card")}>
+                            <h3 className={cx("quantity")}>
+                                1
+                                <FontAwesomeIcon
+                                    icon={faPlus}
+                                    className={cx("icon")}
+                                />
+                            </h3>
+                            <p className={cx("label")}>
+                                Years of <span>experience</span>
+                            </p>
+                        </div>
+                        <div className={cx("card")}>
+                            <h3 className={cx("quantity")}>
+                                10
+                                <FontAwesomeIcon
+                                    icon={faPlus}
+                                    className={cx("icon")}
+                                />
+                            </h3>
+                            <p className={cx("label")}>
+                                Completed <span>projects</span>
+                            </p>
+                        </div>
                     </div>
                 </div>
+                <hr className={cx("separator")} />
+                <Skill />
+                <hr className={cx("separator")} />
+                <Education />
             </div>
-            <hr className={cx("separator")} />
-            <Skill />
-            <hr className={cx("separator")} />
-            <Education />
-        </div>
+
+            <Modal open={showPreview} onHide={() => setShowPreview(false)}>
+                <object
+                    data={files.myCV}
+                    type=""
+                    style={{
+                        width: "80vw",
+                        height: "90vh",
+                    }}
+                ></object>
+            </Modal>
+        </>
     );
 };
 
