@@ -122,6 +122,20 @@
         &-btn {
             min-width: 200px;
         }
+
+        .w-50 {
+            width: 50%;
+        }
+
+        @include responsive(MD) {
+            &-preview {
+                display: none;
+            }
+
+            .w-50 {
+                text-align: center;
+            }
+        }
     }
 
     .separator {

@@ -2,7 +2,6 @@ import { faArrowRight, faPlus } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import classNames from "classnames/bind";
 import files from "~/assets/files";
-import images from "~/assets/images";
 import Button from "~/components/Button";
 import Education from "~/components/Education";
 import Heading from "~/components/Heading";
@@ -22,11 +21,11 @@ interface IPersonalInfo {
     email: string;
 }
 const personalInfo: IPersonalInfo = {
-    firstName: "Trần Lâm",
-    lastName: "Trường",
+    firstName: "Truong",
+    lastName: "Tran Lam",
     yearOfBirth: "1999",
-    gender: "Nam",
-    address: "Quảng Ngãi, Việt Nam",
+    gender: "Male",
+    address: "Quang Ngai Province, Viet Nam",
     phone: "0966007935",
     github: "github.com/lamtruong28",
     email: "lamtruongpk31@gmail.com",
@@ -88,29 +87,33 @@ const About = () => {
                             </p>
                         </div>
                         <div className={cx("wrap__button")}>
-                            <Button
-                                className={cx("wrap__button-btn")}
-                                outline
-                                rounded
-                                leftIcon={
-                                    <FontAwesomeIcon icon={faArrowRight} />
-                                }
-                                onClick={() => setShowPreview(true)}
-                            >
-                                View CV
-                            </Button>
-                            <Button
-                                className={cx("wrap__button-btn")}
-                                outline
-                                rounded
-                                leftIcon={
-                                    <FontAwesomeIcon icon={faArrowRight} />
-                                }
-                                href={files.myCV}
-                                download
-                            >
-                                DOWNLOAD CV
-                            </Button>
+                            <div className={cx("w-50", "wrap__button-preview")}>
+                                <Button
+                                    className={cx("wrap__button-btn")}
+                                    outline
+                                    rounded
+                                    leftIcon={
+                                        <FontAwesomeIcon icon={faArrowRight} />
+                                    }
+                                    onClick={() => setShowPreview(true)}
+                                >
+                                    PREVIEW CV
+                                </Button>
+                            </div>
+                            <div className={cx("w-50")}>
+                                <Button
+                                    className={cx("wrap__button-btn")}
+                                    outline
+                                    rounded
+                                    leftIcon={
+                                        <FontAwesomeIcon icon={faArrowRight} />
+                                    }
+                                    href={files.myCV}
+                                    download
+                                >
+                                    DOWNLOAD CV
+                                </Button>
+                            </div>
                         </div>
                     </div>
                     <div className={cx("info__more")}>

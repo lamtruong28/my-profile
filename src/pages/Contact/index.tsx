@@ -25,7 +25,7 @@ const contactInfo: IContactInfo[] = [
     {
         icon: faLocationDot,
         label: "Address",
-        info: "Quảng Ngãi, Việt Nam",
+        info: "Quang Ngai Province, Viet Nam",
     },
     {
         icon: faEnvelope,

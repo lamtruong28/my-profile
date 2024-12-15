@@ -16,19 +16,21 @@ const Home = () => {
             <div className={cx("content")}>
                 <div className={cx("text")}>
                     <h1 className={cx("title")}>
-                        Trần Lâm Trường <span>Web Developer !</span>
+                        Tran Lam Truong <span>Web Developer !</span>
                     </h1>
                     <p className={cx("greet")}>
-                        Xin chào mọi người! Mình là Trường, một người đam mê lập
-                        trình. Ngoài việc học kiến thức ở trường, mình còn tự
-                        học thêm các kiến thức khác từ nhiều website khác nhau.
-                        Cộng đồng F8 Fullstack của anh Sơn là một trang mình học
-                        được rất nhiều kiến thức bổ ích. Mình đã hoàn thành các
-                        khóa học HTML, CSS, JavaScript, ReactJS,... Khi học ở
-                        trường và F8, mình có một vài dự án cá nhân, mong mọi
-                        người xem và góp ý cho mình, để mình ngày càng hoàn
-                        thiện hơn.
-                        <span className={cx("thanks")}>Mình xin cảm ơn!</span>
+                        Hi there! <br /> I'm Truong, a programming enthusiast.
+                        In addition to learning knowledge at school, I also
+                        learn other knowledge from many different websites. Mr.
+                        Son's F8 Fullstack community is a page where I learned a
+                        lot of useful knowledge. I have completed HTML, CSS,
+                        JavaScript, and ReactJS courses... <br />
+                        While studying at school and F8, I have a few personal
+                        projects. I hope everyone will see and give me feedback
+                        so that I can improve more and more.
+                        <span className={cx("thanks")}>
+                            Thank you for visiting my website!
+                        </span>
                     </p>
                     <div className={cx("button")}>
                         <Button

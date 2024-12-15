@@ -42,6 +42,10 @@ const skills: ISkill[] = [
         label: "NextJS",
     },
     {
+        image: images.python,
+        label: "Python",
+    },
+    {
         image: images.antd,
         label: "Ant design",
     },

@@ -16,6 +16,7 @@ import mui from "~/assets/images/mui.png";
 import antd from "~/assets/images/antd.png";
 import postgres from "~/assets/images/postgres.png";
 import mysql from "~/assets/images/mysql.png";
+import python from "~/assets/images/python.png";
 
 const images = {
     avatar,
@@ -36,6 +37,7 @@ const images = {
     mui,
     postgres,
     mysql,
+    python,
 };
 
 export default images;

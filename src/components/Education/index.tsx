@@ -5,28 +5,34 @@ import Process from "./Process";
 
 const processes: IProcess[] = [
     {
-        timeline: "05/2023 - Hiện tại",
-        area: "Đại Nam Group",
-        position: "Frontend developer",
-        desc: "Làm việc tại CTCP tập đoàn Đại Nam Group",
+        timeline: "March 2024 - Present",
+        area: "Digitool Solutions",
+        position: "Software Engineer",
+        desc: "Work for Digitool Solutions.",
     },
     {
-        timeline: "11/2022 - 02/2023",
+        timeline: "May 2023 - Feb 2024",
+        area: "Đại Nam Group",
+        position: "Frontend developer",
+        desc: "Working at Dai Nam Group Corporation",
+    },
+    {
+        timeline: "Nov 2022 - Feb 2023",
         area: "Alta software",
-        position: "Thực tập sinh Front end",
-        desc: "Đầu tháng 11, tôi đã bắt đầu thực tập tại công ty alta software",
+        position: "Intern frontend",
+        desc: "Started internship at alta software company",
     },
     {
         timeline: "2020 - 2023",
-        area: "Cao đăng Lý Tự Trọng",
-        position: "Sinh viên IT",
-        desc: "Bắt đầu quá trình học lại với chuyên ngành công nghệ thông tin",
+        area: "Ly Tu Trong College",
+        position: "IT Student",
+        desc: "Start studying again with a major in information technology",
     },
     {
         timeline: "2017 - 2020",
-        area: "Nidec Việt Nam Corporation",
-        position: "Công nhân sản xuất",
-        desc: "Sau khi vừa tốt nghiệp, tôi đã vào Sài Gòn làm việc để trải nghiệm cuộc sống thành thị.",
+        area: "Nidec Viet Nam Corporation",
+        position: "Production worker",
+        desc: "After graduating, I went to Saigon to work and experience urban life.",
     },
 ];
 
