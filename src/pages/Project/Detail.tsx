@@ -57,7 +57,7 @@ function Detail({ project, setShowDetail }: IDetail) {
                     </p>
                     <p>
                         <span>Responsive: </span>{" "}
-                        <span>{project?.responsive ? "Có" : "Không"}</span>
+                        <span>{project?.responsive ? "Yes" : "No"}</span>
                     </p>
                     <p>
                         <span>Link website: </span>
