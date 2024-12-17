@@ -49,10 +49,10 @@ function Detail({ project, setShowDetail }: IDetail) {
                 </h2>
                 <div className={cx("detail-content-wrap")}>
                     <p>
-                        <span>Mô tả: </span> <span>{project?.desc}</span>
+                        <span>Description: </span> <span>{project?.desc}</span>
                     </p>
                     <p>
-                        <span>Công nghệ sử dụng: </span>{" "}
+                        <span>Technology: </span>{" "}
                         <span>{project?.technology}</span>
                     </p>
                     <p>
